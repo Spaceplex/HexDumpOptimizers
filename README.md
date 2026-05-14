@@ -37,3 +37,17 @@
 |ADDRESS| 000001e0 |HEX| 0c 00 01 00 10 00 01 00 00 00 00 00 00 00 00 04  |ASCII| ................ 
 |ADDRESS| 000001f0 |HEX| 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |ASCII| ................ 
 ```
+
+# -O0 (optimzations0):
+This is roughly a near literal translation from C to S. Compared to the optimized files the variables are stored on the stack (eg: ```moveq %rax, -56((%rbp)```)
+- Uses the stack the most of the assembly files
+- This uses 5 total jump lines
+
+# -O1 (optimization1):
+This has a 8 fewer lines than O0. O1 and O3 
+- Notably the least amount of lines
+- Uses 3 jump lines
+
+# -O3:
+Exclusively uses registers. Has more lines than O1
+- 1 jump line
